@@ -1,0 +1,102 @@
+/* Importerer skrifttypen som skal bli brukt */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+/*? Lager gitte "komponenter" som skal bli brukt flere steder */
+:root {
+    --darkblue: #2A324B;
+    --lightblue: #58699D;
+    --grey: #E1E5EE;
+    --white: #FFFFFF;
+
+    --font: "Montserrat", sans-serif;
+}
+
+body {
+    background-color: var(--grey);
+    font-family: var(--font);
+    font-size: 20px;
+    /* {Gjør slik at boksen holder seg sentrert */
+    display: flex;
+    justify-content: center;
+    height: 100dvh;
+    align-items: center;
+    /* } */
+    margin: 0;
+}
+
+#cardbox {
+    width: 100%;
+    max-width: 1200px;
+}
+
+button {
+    background-color: var(--darkblue);
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 800;
+    padding: 1.5rem 4.25rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+nav ul {
+    /* {Gjør at alle listeelementene ligger ved siden av hverandre istedenfor under hverandre og er sentrert */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* } */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    /* Gjør slik at det  */
+    flex-wrap: wrap;
+} 
+
+.active {
+    background-color: var(--white);
+    color: var(--darkblue);
+}
+
+main {
+    background-color: var(--white);
+    min-height: 350px;
+    font-size: 1rem;
+}
+
+article {
+    padding: 5rem;
+}
+
+h1 {
+    color: var(--darkblue);
+    margin-top: 0;
+}
+
+#card ul li a {
+    color: var(--lightblue);
+}
+
+/* Gjør at nav ikk skal legge seg rart når skjermen blir mindre */
+@media only screen and (max-width: 1245px) {
+    body {
+        padding: 1rem;
+    }
+
+    nav ul {
+        justify-content: flex-start;
+        gap: 1rem
+    } 
+
+    main {
+        min-height: 400px;
+    }
+}
+
+/* Gjør at man skal kunne scrolle når skjermen blir smalere */
+@media only screen and (max-height: 550px) {
+    body {
+        height: auto;
+        padding: 1rem;
+    }
+}
