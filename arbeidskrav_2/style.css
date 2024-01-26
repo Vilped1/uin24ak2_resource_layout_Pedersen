@@ -1,7 +1,7 @@
 /* Importerer skrifttypen som skal bli brukt */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
-/*? Lager gitte "komponenter" som skal bli brukt flere steder */
+/* Lager gitte CSS-variabler som skal bli brukt senere i koden */
 :root {
     --darkblue: #2A324B;
     --lightblue: #58699D;
@@ -49,7 +49,7 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    /* Gjør slik at det  */
+    /* Gjør slik at det som står i vav ikke lgger seg under hverandre */
     flex-wrap: wrap;
 } 
 

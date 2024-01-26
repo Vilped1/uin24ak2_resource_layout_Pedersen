@@ -1,4 +1,4 @@
-// !
+// Lagde en ny const med det som skulle stå i nav. Fjernet HTML for at det ikke skulle komme to ganger pga det som står på linje 109
 const categories = ["CSS", "JavaScript", "React", "Sanity and headless CMS"]
 
 const resources = [
@@ -103,10 +103,9 @@ const cat = document.getElementById("categories")
 // Lager en const som peker på taggen med id="card"
 const cards = document.getElementById("card")
 
-// !! TODO:  
-// !
+// Funksjon som oppdaterer visningen av resurss kortene
 function cardtitle() {
-    /// Gjør slik at når siden lastes inn så har HTML categorien classen activ slik at man ser hvilken kategori man er på
+    // Gjør slik at når siden lastes inn så har HTML categorien classen "activ" slik at knapper er hvit for å indikere hvilet kort man er på
     let cat = `<li><button class="filterButton HTML active">HTML</button></li>`
     
     // Går gjennom alle objectene i arrayen
@@ -151,7 +150,6 @@ function cardtitle() {
 }
 
 
-// !! TODO:
  // Filtrerer hvilke resurss kort som vises utifra hvilken kategori kanpp som er trykket
 function filter(category) {
     // Gjør slik at hvis category er "Sanity" så endre til "Sanity and headless CMS" for å matche det som står i arrayen under categories. Siden mellomrommene gjør "Sanity and headless CMS" om til fire classer
@@ -167,7 +165,7 @@ function filter(category) {
 
     // Går gjennom alle objektene i arrayen
     filtercards.map(card => {
-        /// Gjør at  blir lagt til og ikke byttet ut med det som alt sto der
+        // Trengger ikke += her siden det er kun det enkelt objektet skal stå på hvert kort så det ville ikke blit byttet ut med noe annet siden det ikke er mer som skal stå der
         cards =
         // Legger inn korrekt HTML struktur for riktig visning av resurss kortene
         `<h1>${card.category}</h1>
@@ -175,10 +173,11 @@ function filter(category) {
         <section>
             <ul>`
         
-        // !
+        // Går gjennom alle objektene i arrayen til hvert enkelt objekt som blir mappet
         card.sources.forEach(link => {
             cards += `<li><a href="${link.url}">${link.title}</a></li>`})
         
+        // Sårger for at taggene er avsluttet
         cards +=
                 `</ul>
             </section>`
@@ -191,4 +190,5 @@ function filter(category) {
 
 // Kaller på disse funksjonene med en gang siden laster
 cardtitle()
+// Parameteret sendt med gjør at man starter på HTML resurss kortet
 filter("HTML")
